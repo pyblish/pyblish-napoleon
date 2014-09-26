@@ -1,0 +1,6 @@
+**/published
+**/public
+*.mb
+*.pyc
+coverage
+*.swatches

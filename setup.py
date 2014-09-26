@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""This setup script packages pyblish_napoleon"""
+"""This setup script packages pyblish-napoleon"""
 
 from setuptools import setup, find_packages
 
@@ -13,7 +13,7 @@ with open('README.txt') as f:
 import os
 import imp
 
-version_file = os.path.abspath('pyblish_napoleon/version.py')
+version_file = os.path.abspath('napoleon/version.py')
 version_mod = imp.load_source('version', version_file)
 version = version_mod.version
 
@@ -32,14 +32,14 @@ classifiers = [
 
 
 setup(
-    name='pyblish_napoleon',
+    name='pyblish-napoleon',
     version=version,
     packages=find_packages(),
     url='https://github.com/pyblish/pyblish-napoleon',
     license='LGPL',
     author='Abstract Factory and Contributors',
     author_email='marcus@abstractfactory.io',
-    description='napoleon Pyblish package',
+    description='Asset Framework for Pyblish',
     long_description=readme,
     zip_safe=False,
     classifiers=classifiers
