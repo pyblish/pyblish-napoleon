@@ -33,11 +33,11 @@ class NapoleonSelectViaObjectSet(napoleon.plugin.Selector):
 
             self.log.info("Found: {0}".format(objset))
 
-            for node in cmds.sets(objset, query=True):
+            for node in cmds.sets(objset, query=True) or list():
                 if cmds.nodeType(node) == 'transform':
                     descendents = cmds.listRelatives(node,
                                                      allDescendents=True,
-                                                     fullPath=True)
+                                                     fullPath=True) or list()
                     for descendent in descendents:
                         # Don't include shapes
                         if cmds.nodeType(descendent) in ('mesh',
