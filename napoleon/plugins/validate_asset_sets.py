@@ -2,7 +2,7 @@ import pyblish.api
 import napoleon.plugin
 
 
-class NapoleonValidateSets(napoleon.plugin.Validator):
+class NapoleonValidateAssetSets(napoleon.plugin.Validator):
     """Ensure instances of relevant families carry the required Object Sets
 
     For subsequent pipeline tools and Pyblish plug-ins to function

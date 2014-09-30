@@ -32,18 +32,18 @@ class NapoleonConformAsset(napoleon.plugin.Conformer):
 
         commit_dir = instance.data('commit_dir')
         if not commit_dir:
-            self.log.warning("Cannot conform what hasn't "
-                             "been committed: \"%s\"" % instance)
-            return
+            raise pyblish.api.ConformError(
+                "Cannot conform what hasn't "
+                "been committed: \"%s\"" % instance)
 
         # Locate asset in which the commit is stored
         parent_asset_dir = cquery.first_match(commit_dir,
                                               selector='.Asset',
                                               direction=cquery.UP)
         if not parent_asset_dir:
-            self.log.warning("Could not locate parent "
-                             "asset of commit: %s" % commit_dir)
-            return
+            raise pyblish.api.ConformError(
+                "Could not locate parent "
+                "asset of commit: %s" % commit_dir)
 
         self.log.info("Parent asset: %s" % parent_asset_dir)
         public_dir = napoleon.pipeline.public_dir(parent_asset_dir)
