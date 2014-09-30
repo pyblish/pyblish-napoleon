@@ -4,3 +4,11 @@ python:
 - 2.7
 script:
 - pip install git+git://github.com/pyblish/pyblish-napoleon.git
+deploy:
+  provider: pypi
+  user: mottosso
+  password:
+    secure: L/n6HnPaidCRHBnKDzGMFJrI5oRYfj9EZt0LJ6qUN3GGBgUM1QNIyiWUJrx0WI0Rikrzn2tZ8b18WjJl5vSY/wHmzltG3Q+MK8pSZSUd0dT4dmzHpHWx0Vqj65BEI6Z8wLZOuUWJNyNFGjFss9LMOtcNJJYB1bbcOny9uJo0mro=
+  on:
+    tags: true
+    all_branches: true

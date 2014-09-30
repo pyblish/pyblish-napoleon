@@ -38,7 +38,7 @@ class NapoleonConformAsset(napoleon.plugin.Conformer):
 
         # Locate asset in which the commit is stored
         parent_asset_dir = cquery.first_match(commit_dir,
-                                              selector='Asset',
+                                              selector='.Asset',
                                               direction=cquery.UP)
         if not parent_asset_dir:
             self.log.warning("Could not locate parent "
