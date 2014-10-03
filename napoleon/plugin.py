@@ -16,11 +16,45 @@ class Extractor(pyblish.Extractor):
     @contextlib.contextmanager
     def temp_dir(self):
         """Provide a temporary directory in which to store files"""
-        temp_dir = tempfile.mkdtemp()
+        self._temp_dir = tempfile.mkdtemp()
 
-        yield temp_dir
+        yield self._temp_dir
 
-        shutil.rmtree(temp_dir)
+        shutil.rmtree(self._temp_dir)
+        self._temp_dir = None
+
+    def commit(self, instance):
+        """Move `instance` relative current workspace
+
+        Arguments:
+            instance (Instance): Instance to be committed
+
+        """
+
+        if not self._temp_dir:
+            raise pyblish.ExtractionError("Cannot commit outside of "
+                                          "temporary directory. Use "
+                                          "self.temp_dir() first")
+
+        temp_dir = self._temp_dir
+        commit_dir = self.compute_commit_directory(instance=instance)
+
+        self.log.info("Moving {0} relative working file..".format(instance))
+
+        if os.path.isdir(commit_dir):
+            self.log.info("Existing directory found, merging..")
+            for fname in os.listdir(temp_dir):
+                abspath = os.path.join(temp_dir, fname)
+                commit_path = os.path.join(commit_dir, fname)
+                shutil.copy(abspath, commit_path)
+        else:
+            self.log.info("No existing directory found, creating..")
+            shutil.copytree(temp_dir, commit_dir)
+
+        # Persist path of commit within instance
+        instance.set_data('commit_dir', value=commit_dir)
+
+        return commit_dir
 
 
 class Conformer(pyblish.Conformer):

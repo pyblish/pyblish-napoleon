@@ -1,7 +1,6 @@
 """Mock-up of simplified pipeline"""
 
 import os
-import cquery
 
 
 def public_dir(asset_dir):
