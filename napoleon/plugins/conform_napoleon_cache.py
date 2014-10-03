@@ -1,3 +1,5 @@
+import os
+
 import pyblish.api
 import napoleon.plugin
 import napoleon.pipeline
@@ -7,14 +9,11 @@ import cquery
 
 
 @pyblish.api.log
-class NapoleonConformAsset(napoleon.plugin.Conformer):
-    """Move assets to their final destination
+class ConformNapoleonCache(napoleon.plugin.Conformer):
+    """Move caches to their final destination
 
-    Each instance will end up at it's parent asset directory,
-    e.g. asset/public/v001.
-
-    Assets are identified using cQuery and
-    metadata recorded with Open Metadata.
+    Caches end up underneath its corresponding shot,
+    e.g. shot/public/<instance>/<family>/v001/
 
     Data:
         conform_dirs: Appends output directory
@@ -23,31 +22,43 @@ class NapoleonConformAsset(napoleon.plugin.Conformer):
 
     hosts = ['maya']
     version = (0, 1, 0)
-    families = ['napoleon.model',
-                'napoleon.rig.animation']
-    name = 'Conform Asset'
+    families = ['napoleon.cache.curves',
+                'napoleon.cache.review',
+                'napoleon.cache.points']
+    name = 'Conform Cache'
 
     def process_instance(self, instance):
-        """Conform asset into a new version within a public repository"""
-
         commit_dir = instance.data('commit_dir')
         if not commit_dir:
             raise pyblish.api.ConformError(
                 "Cannot conform what hasn't "
                 "been committed: \"%s\"" % instance)
 
-        # Locate asset in which the commit is stored
         parent_asset_dir = cquery.first_match(commit_dir,
-                                              selector='.Asset',
+                                              selector='.Shot',
                                               direction=cquery.UP)
         if not parent_asset_dir:
             raise pyblish.api.ConformError(
                 "Could not locate parent "
-                "asset of commit: %s" % commit_dir)
+                "shot of commit: %s" % commit_dir)
 
-        self.log.info("Parent asset: %s" % parent_asset_dir)
+        self.log.info("Parent shot: %s" % parent_asset_dir)
         public_dir = napoleon.pipeline.public_dir(parent_asset_dir)
-        version_dir = napoleon.pipeline.version_dir(public_dir)
+
+        name = instance.data('name')
+
+        try:
+            # Use namespace as name of instance by default
+            namespace, name = name.rsplit(":", 1)
+            name = namespace.strip("_")  # Use namespace for name of instance
+        except ValueError:
+            pass
+
+        family = instance.data('family')
+        assert family
+
+        instance_dir = os.path.join(public_dir, name, family)
+        version_dir = napoleon.pipeline.version_dir(instance_dir)
 
         self.copy(src=commit_dir, dst=version_dir)
 

@@ -7,7 +7,7 @@ from maya import cmds
 
 
 @pyblish.api.log
-class NapoleonExtractAnimationAsCurves(napoleon.plugin.Extractor):
+class ExtractNapoleonCurves(napoleon.plugin.Extractor):
     """Extract cache-instances as ATOM
 
     Overridable attributes:
@@ -26,7 +26,7 @@ class NapoleonExtractAnimationAsCurves(napoleon.plugin.Extractor):
 
     """
 
-    families = ['napoleon.animation.curves']
+    families = ['napoleon.cache.curves']
     hosts = ['maya']
     version = (0, 0, 1)
     optional = True
@@ -52,6 +52,20 @@ class NapoleonExtractAnimationAsCurves(napoleon.plugin.Extractor):
             'copyKeyCmd': ('-animation objects -option keys '
                            '-hierarchy none -controlPoints 0')
         }
+
+    def process_instance(self, instance):
+        """Overridden from Extractor"""
+        self.log.info("Extracting Atom..")
+        self.load_plugins()
+
+        options = self.options
+        self.override_options(options, instance=instance)
+
+        kwargs = self.file_kwargs(options)
+
+        self.log.info("Extracting {0} locally..".format(instance))
+        self.export(instance=instance, kwargs=kwargs)
+        self.log.info("Extraction successful")
 
     def file_kwargs(self, options):
         """cmds.file() key-word arguments"""
@@ -80,26 +94,12 @@ class NapoleonExtractAnimationAsCurves(napoleon.plugin.Extractor):
                 args=kwargs))
 
             cmds.file(temp_file, **kwargs)
-            self.commit(path=temp_dir, instance=instance)
+            self.commit(instance=instance)
 
         if previous_selection:
             cmds.select(previous_selection, replace=True)
         else:
             cmds.select(deselect=True)
-
-    def process_instance(self, instance):
-        """Overridden from Extractor"""
-        self.log.info("Extracting Atom..")
-        self.load_plugins()
-
-        options = self.options
-        self.override_options(options, instance=instance)
-
-        kwargs = self.file_kwargs(options)
-
-        self.log.info("Extracting {0} locally..".format(instance))
-        self.export(instance=instance, kwargs=kwargs)
-        self.log.info("Extraction successful")
 
     @classmethod
     def parse_options(cls, options):

@@ -2,16 +2,16 @@ import pyblish.api
 import napoleon.plugin
 
 
-class NapoleonValidateAssetSets(napoleon.plugin.Validator):
+class ValidateNapoleonAssetSets(napoleon.plugin.Validator):
     """Ensure instances of relevant families carry the required Object Sets
 
     For subsequent pipeline tools and Pyblish plug-ins to function
     correctly, these objectSets must be present along with each family.
 
     Sets:
-        napoleon.model:
+        napoleon.asset.model:
             - geometry_SEL
-        napoleon.rig.animation:
+        napoleon.asset.rig:
             - pointcache_SEL
             - controls_SEL
     """
@@ -22,9 +22,9 @@ class NapoleonValidateAssetSets(napoleon.plugin.Validator):
 
     def process_instance(self, instance):
         all_objsets = {
-            'napoleon.model': ['geometry_SEL'],
-            'napoleon.rig.animation': ['pointcache_SEL',
-                                       'controls_SEL']
+            'napoleon.asset.model': ['geometry_SEL'],
+            'napoleon.asset.rig': ['pointcache_SEL',
+                                   'controls_SEL']
         }
 
         for family, objsets in all_objsets.iteritems():
@@ -39,6 +39,5 @@ class NapoleonValidateAssetSets(napoleon.plugin.Validator):
 
             if missing:
                 raise pyblish.api.ValidationError(
-                    "\"{instance}\" did not have required "
-                    "set(s): {sets}".format(instance=instance,
-                                            sets=", ".join(missing)))
+                    "Missing set(s): {sets} ".format(
+                        sets=", ".join(missing)))

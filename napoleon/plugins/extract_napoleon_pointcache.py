@@ -9,10 +9,10 @@ import maya.mel as mel
 
 
 @pyblish.api.log
-class NapoleonExtractAnimationAsPointcache(napoleon.plugin.Extractor):
-    """Extract members of a napoleon.rig.animation as Alembic"""
+class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
+    """Extract members of a napoleon.asset.rig as Alembic"""
 
-    families = ['napoleon.animation.pointcache']
+    families = ['napoleon.cache.pointcache']
     hosts = ['maya']
     version = (0, 0, 1)
     optional = True
@@ -120,7 +120,7 @@ class NapoleonExtractAnimationAsPointcache(napoleon.plugin.Extractor):
 
             mel.eval(mel_cmd)
 
-            self.commit(path=temp_dir, instance=instance)
+            self.commit(instance=instance)
 
     @classmethod
     def parse_options(cls, options, instance):

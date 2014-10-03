@@ -5,7 +5,7 @@ import maya.cmds as cmds
 
 
 @pyblish.api.log
-class NapoleonSelectViaObjectSet(napoleon.plugin.Selector):
+class SelectNapoleonInstances(napoleon.plugin.Selector):
     """Identify publishable instances via objectSets
 
     In a nutshell, this selector looks for instances with

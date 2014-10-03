@@ -7,10 +7,10 @@ from maya import cmds
 
 
 @pyblish.api.log
-class NapoleonExtractAsMb(napoleon.plugin.Extractor):
-    """Extract family members of a napoleon.model as Maya ASCII"""
+class ExtractNapoleonMb(napoleon.plugin.Extractor):
+    """Extract family members of a napoleon.asset.model as Maya Binary"""
 
-    families = ['napoleon.model', 'napoleon.rig.animation']
+    families = ['napoleon.asset.model', 'napoleon.asset.rig']
     hosts = ['maya']
     version = (0, 1, 0)
     optional = False
@@ -35,7 +35,7 @@ class NapoleonExtractAsMb(napoleon.plugin.Extractor):
                       exportSelected=True,
                       preserveReferences=False)
 
-            self.commit(path=temp_dir, instance=instance)
+            self.commit(instance=instance)
 
         if previous_selection:
             cmds.select(previous_selection,
