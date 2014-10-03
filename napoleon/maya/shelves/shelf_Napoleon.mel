@@ -1,0 +1,85 @@
+global proc shelf_Napoleon () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 23
+        -height 23
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "\"\"\"Imprint and restore default values\n\nCurrent keyable values are stored in a `defaults` attribute\nwithin each node using `imprint()` and later restored using\n`restore()`. This way, channels which could otherwise not\nhave a native default value (such as plain transform and rotate)\nmay carry defaults alongside user-defined attributes.\n\n\"\"\"\n\nimport json\n\n\ndef store(node):\n    \"\"\"Store current values as default values\"\"\"\n    defaults = dict()\n    for attr in cmds.listAttr(node, keyable=True):\n        value = cmds.getAttr(\"%s.%s\" % (node, attr))\n        defaults[attr] = value\n\n    defaults_string = json.dumps(defaults)\n    if not cmds.objExists(node + \".defaults\"):\n        cmds.addAttr(node, ln=\"defaults\", dt='string')\n    cmds.setAttr(node + \".defaults\", defaults_string, type='string')\n\n\ndef store_selected():\n    for node in cmds.ls(sl=1):\n        store(node)\n\n\ndef restore(node):\n    \"\"\"Restore defaults from imprint\"\"\"\n    defaults = cmds.getAttr(node + \".defaults\")\n    defaults_dict = json.loads(defaults)\n    for key, value in defaults_dict.iteritems():\n        cmds.setAttr(node + \".%s\" % key, value)\n\n\ndef restore_selected():\n    for node in cmds.ls(sl=1):\n        restore(node)\n\n\nstore_selected()" 
+        -enableBackground 0
+        -align "center" 
+        -label "Store" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "alignVMin.png" 
+        -image1 "alignVMin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from napoleon.maya import defaults\ndefaults.store_selected()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 23
+        -height 23
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "\"\"\"Imprint and restore default values\n\nCurrent keyable values are stored in a `defaults` attribute\nwithin each node using `imprint()` and later restored using\n`restore()`. This way, channels which could otherwise not\nhave a native default value (such as plain transform and rotate)\nmay carry defaults alongside user-defined attributes.\n\n\"\"\"\n\nimport json\n\n\ndef store(node):\n    \"\"\"Store current values as default values\"\"\"\n    defaults = dict()\n    for attr in cmds.listAttr(node, keyable=True):\n        value = cmds.getAttr(\"%s.%s\" % (node, attr))\n        defaults[attr] = value\n\n    defaults_string = json.dumps(defaults)\n    if not cmds.objExists(node + \".defaults\"):\n        cmds.addAttr(node, ln=\"defaults\", dt='string')\n    cmds.setAttr(node + \".defaults\", defaults_string, type='string')\n\n\ndef store_selected():\n    for node in cmds.ls(sl=1):\n        store(node)\n\n\ndef restore(node):\n    \"\"\"Restore defaults from imprint\"\"\"\n    defaults = cmds.getAttr(node + \".defaults\")\n    defaults_dict = json.loads(defaults)\n    for key, value in defaults_dict.iteritems():\n        cmds.setAttr(node + \".%s\" % key, value)\n\n\ndef restore_selected():\n    for node in cmds.ls(sl=1):\n        restore(node)\n\n\nrestore_selected()" 
+        -enableBackground 0
+        -align "center" 
+        -label "Restore" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "alignVMax.png" 
+        -image1 "alignVMax.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from napoleon.maya import defaults\ndefaults.restore_selected()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "from napoleon.maya import mirroring\nreload(mirroring)\nmirroring.mirror_selected_shapes()" 
+        -enableBackground 0
+        -align "center" 
+        -label "Mirror" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "polyMirrorCut.png" 
+        -image1 "polyMirrorCut.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from napoleon.maya import mirroring\nmirroring.mirror_selected_shapes()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 
