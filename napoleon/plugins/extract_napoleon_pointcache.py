@@ -19,7 +19,7 @@ class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
     name = 'Extract Animation as Pointcache'
 
     @property
-    def overridable_options(self):
+    def options(self):
         """Overridable options for Alembic export
 
         Given in the following format
@@ -83,7 +83,7 @@ class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
         """
 
         for key in instance.data():
-            if key not in self.overridable_options:
+            if key not in self.options:
                 continue
 
             value = instance.data(key)
@@ -91,7 +91,7 @@ class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
 
             # Look at the expected type compared
             # with the type of Maya attribute.
-            if typ == self.overridable_options[key]:
+            if typ == self.options[key]:
                 if typ == bool and value is True:
                     options[key] = ''
                 elif type in (str, float):
@@ -103,7 +103,7 @@ class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
                     "- should have been {valid_type}".format(
                         key=key,
                         invalid_type=type(value).__name__,
-                        valid_type=self.overridable_options[key].__name__))
+                        valid_type=self.options[key].__name__))
 
         return options
 

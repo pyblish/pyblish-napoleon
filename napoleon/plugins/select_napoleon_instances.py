@@ -34,25 +34,30 @@ class SelectNapoleonInstances(napoleon.plugin.Selector):
             self.log.info("Found: {0}".format(objset))
 
             for node in cmds.sets(objset, query=True) or list():
-                if cmds.nodeType(node) == 'transform':
-                    descendents = cmds.listRelatives(node,
-                                                     allDescendents=True,
-                                                     fullPath=True) or list()
-                    for descendent in descendents:
-                        # Don't include shapes
-                        if cmds.nodeType(descendent) in ('mesh',
-                                                         'nurbsCurve',
-                                                         'nurbsSurface'):
-                            continue
-
-                        instance.add(descendent)
-
                 instance.add(node)
+
+                if cmds.nodeType(node) == 'transform':
+                    instance.extend(cmds.listRelatives(
+                        node,
+                        allDescendents=True,
+                        fullPath=True,
+                        type='transform') or list())
+
+                    instance.extend(cmds.listRelatives(
+                        node,
+                        allDescendents=True,
+                        fullPath=True,
+                        type='camera') or list())
 
             attrs = cmds.listAttr(objset, userDefined=True)
             for attr in attrs:
-                if attr == pyblish.api.config['identifier']:
-                    continue
+                if attr == 'parent':
+                    # Instance has a parent instance
+                    parent_instance = cmds.listConnections(
+                        objset + ".parent",
+                        destination=False,
+                        source=True)
+                    instance.set_data('parent', parent_instance)
 
                 try:
                     value = cmds.getAttr(objset + "." + attr)

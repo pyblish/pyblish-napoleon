@@ -43,12 +43,18 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
             self.log.warning("No cameras found, defaulting to persp")
             cameras = ['persp']
 
+        # Set viewport settings
+        view_opts = napoleon.maya.playblast.ViewportOptions()
+        view_opts.polymeshes = True
+        view_opts.nurbsSurfaces = True
+        view_opts.displayAppearance = "smoothShaded"
+
+        cam_opts = napoleon.maya.playblast.CameraOptions()
+
         with self.temp_dir() as temp_dir:
             for camera in cameras:
-
                 # Ensure name of camera is valid
                 camera = pyblish.api.format_filename(camera)
-
                 temp_file = os.path.join(temp_dir, camera)
 
                 if format == 'image':
@@ -63,6 +69,8 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
                     start_frame=start_frame,
                     end_frame=end_frame,
                     format=format,
-                    compression=compression)
+                    compression=compression,
+                    viewport_options=view_opts,
+                    camera_options=cam_opts)
 
             self.commit(instance)

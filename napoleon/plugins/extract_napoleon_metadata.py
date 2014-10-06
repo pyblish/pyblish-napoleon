@@ -1,4 +1,3 @@
-import os
 
 import pyblish.api
 
@@ -14,53 +13,22 @@ class ExtractNapoleonMetadata(napoleon.plugin.Extractor):
     hosts = ['maya']
     version = (0, 1, 0)
 
-    # Ignored
-    blacklist = ['commit_dir',
-                 'family',
-                 'id',
-                 'workspace_dir']
-
     def process_instance(self, instance):
-        commit_dir = instance.data('commit_dir')
-        if not commit_dir:
-            commit_dir = self.compute_commit_directory(instance)
+        data = dict()
 
-        if not os.path.exists(commit_dir):
-            os.makedirs(commit_dir)
+        for key in ('source', 'user', 'date'):
+            if instance.context.has_data(key):
+                data[key] = instance.context.data(key)
 
-        data = instance.data()
+        if instance.has_data('description'):
+            data['description'] = instance.data('description')
 
-        for key, value in instance.context.data().iteritems():
-            data['context/' + key] = value
+        if instance.data('notesAsDescription'):
+            data['description'] = instance.data('notes')
 
-        self.parse_description(data)
-        self.parse_source(data)
-
-        self.write(commit_dir, data)
-
-    def write(self, path, data, prefix=''):
-        """Write data, ignoring errors"""
-        for key, value in data.iteritems():
-            if key.startswith("__") or key in self.blacklist:
-                continue
-
-            try:
-                self.log.info("Extracting \"%s\"" % key)
-                napoleon.metadata.write(path=path,
-                                        key=prefix + key,
+        with self.temp_dir() as temp_dir:
+            for key, value in data.iteritems():
+                napoleon.metadata.write(path=temp_dir,
+                                        key=key,
                                         value=value)
-            except Exception:
-                self.log.debug("Could not extract: %s" % key)
-
-    def parse_description(self, data):
-        """Look for `notesAsDescription` flag and use notes when appropriate"""
-        notes_as_description = data.pop('notesAsDescription', False)
-        notes = data.pop('notes', None)
-
-        if notes and notes_as_description:
-            data['description'] = notes
-
-    def parse_source(self, data):
-        """Treat `current_file` as source for instance"""
-        source = data.pop('context/current_file', None)
-        data['source'] = source
+            self.commit(instance)
