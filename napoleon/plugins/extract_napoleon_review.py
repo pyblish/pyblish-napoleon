@@ -2,7 +2,7 @@ import os
 
 import pyblish.api
 import napoleon.plugin
-import napoleon.maya.playblast
+import napoleon.maya.capture
 
 from maya import cmds
 
@@ -15,11 +15,12 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
                 "napoleon.cache.review"]
     hosts = ["maya"]
     version = (0, 1, 0)
+    requires = (1, 0, 9)
 
     def process_instance(self, instance):
-        """Extract a playblast per camera in `instance`"""
+        """Extract capture per camera"""
 
-        self.log.info("Extracting playblast..")
+        self.log.info("Extracting capture..")
 
         current_min_time = cmds.playbackOptions(minTime=True, query=True)
         current_max_time = cmds.playbackOptions(maxTime=True, query=True)
@@ -34,6 +35,7 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
 
         format = instance.data('format') or 'image'
         compression = instance.data('compression') or 'png'
+        off_screen = instance.data('offScreen') or False
 
         # Get cameras in instance
         cameras = [c for c in instance if cmds.nodeType(c) == 'camera']
@@ -44,12 +46,12 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
             cameras = ['persp']
 
         # Set viewport settings
-        view_opts = napoleon.maya.playblast.ViewportOptions()
+        view_opts = napoleon.maya.capture.ViewportOptions()
         view_opts.polymeshes = True
         view_opts.nurbsSurfaces = True
         view_opts.displayAppearance = "smoothShaded"
 
-        cam_opts = napoleon.maya.playblast.CameraOptions()
+        cam_opts = napoleon.maya.capture.CameraOptions()
 
         with self.temp_dir() as temp_dir:
             for camera in cameras:
@@ -61,7 +63,7 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
                     # Append sub-directory for image-sequence
                     temp_file = os.path.join(temp_file, camera)
 
-                napoleon.maya.playblast.playblast(
+                napoleon.maya.capture.capture(
                     camera=camera,
                     width=width,
                     height=height,
@@ -69,7 +71,9 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
                     start_frame=start_frame,
                     end_frame=end_frame,
                     format=format,
+                    viewer=False,
                     compression=compression,
+                    off_screen=off_screen,
                     viewport_options=view_opts,
                     camera_options=cam_opts)
 
