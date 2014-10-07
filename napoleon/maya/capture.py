@@ -29,6 +29,8 @@ Example:
     ..         viewport_options=view_opts,
     ..         camera_options=cam_opts)
 
+.. note:: Currently missing, variable background color.
+
 """
 
 import sys
@@ -104,7 +106,7 @@ def capture(camera,
             compression='png',
             off_screen=False,
             viewer=True,
-            maintain_aspect=True,
+            maintain_aspect_ratio=True,
             camera_options=None,
             viewport_options=None):
     """Playblast in an independent panel
@@ -119,6 +121,14 @@ def capture(camera,
         end_frame (float, optional): Defaults to current end frame
         format (str, optional): Name of format, defaults to "image"
         compression (str, optional): Name of compression, defaults to "png"
+        off_screen (bool): Whether or not to playblast off screen
+        viewer (bool): Display results in native player
+        maintain_aspect_ratio (bool): Modify height in order to
+            maintain aspect ratio.
+        camera_options (CameraOptions): Supplied camera options, using
+            :class:`CameraOptions`
+        viewport_options (ViewportOptions): Supplied viewport options,
+            using :class:`ViewportOptions`
 
     Example:
         >> # Launch default capture
@@ -142,9 +152,10 @@ def capture(camera,
     start_frame = start_frame or cmds.playbackOptions(minTime=True, query=True)
     end_frame = end_frame or cmds.playbackOptions(maxTime=True, query=True)
 
-    with independent_panel(width=width,
-                           height=height,
-                           maintain_aspect=maintain_aspect) as panel:
+    with independent_panel(
+            width=width,
+            height=height,
+            maintain_aspect_ratio=maintain_aspect_ratio) as panel:
 
         # Set display settings
         if viewport_options is not None:
@@ -181,13 +192,13 @@ def capture(camera,
 
 
 @contextlib.contextmanager
-def independent_panel(width, height, maintain_aspect=True):
+def independent_panel(width, height, maintain_aspect_ratio=True):
     """Create capture-window context without decorations
 
     Arguments:
         width (int): Width of panel
         height (int): Height of panel
-        maintain_aspect (bool): Modify height in order to
+        maintain_aspect_ratio (bool): Modify height in order to
             maintain aspect ratio.
 
     Example:
@@ -196,7 +207,7 @@ def independent_panel(width, height, maintain_aspect=True):
 
     """
 
-    if maintain_aspect:
+    if maintain_aspect_ratio:
         ratio = cmds.getAttr("defaultResolution.deviceAspectRatio")
         height = width / ratio
 
