@@ -46,15 +46,44 @@ class Extractor(pyblish.Extractor):
             for fname in os.listdir(temp_dir):
                 abspath = os.path.join(temp_dir, fname)
                 commit_path = os.path.join(commit_dir, fname)
-                shutil.copy(abspath, commit_path)
+                self.copy(src=abspath, dst=commit_path)
         else:
             self.log.info("No existing directory found, creating..")
-            shutil.copytree(temp_dir, commit_dir)
+            self.copy(src=temp_dir, dst=commit_dir)
 
         # Persist path of commit within instance
         instance.set_data('commit_dir', value=commit_dir)
 
         return commit_dir
+
+    def copy(self, src, dst):
+        """Copy directory `src` to directory `dst`
+
+        If destination directory already exists, the contents
+        of the source directory are copied into it.
+
+        Arguments:
+            src (str): Absolute path to src directory
+            dst (str): Absolute path to dst directory
+
+        """
+
+        self.log.debug("Copying %s -> %s" % (src, dst))
+
+        if os.path.exists(dst):
+            for item in os.listdir(src):
+                item_path = os.path.join(src, item)
+
+                if os.path.isfile(item_path):
+                    shutil.copy(item_path, dst)
+                else:
+                    new_dst = os.path.join(dst, item)
+                    self.copy(src=item_path, dst=new_dst)
+        else:
+            if os.path.isfile(src):
+                shutil.copy(src, dst)
+            else:
+                shutil.copytree(src, dst)
 
 
 class Conformer(pyblish.Conformer):
@@ -80,6 +109,6 @@ class Conformer(pyblish.Conformer):
                     shutil.copy(item_path, dst)
                 else:
                     new_dst = os.path.join(dst, item)
-                    shutil.copytree(item_path, new_dst)
+                    self.copy(src=item_path, dst=new_dst)
         else:
             shutil.copytree(src, dst)
