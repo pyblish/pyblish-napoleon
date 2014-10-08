@@ -1,6 +1,7 @@
 """Mock-up of simplified pipeline"""
 
 import os
+import cquery
 
 
 def public_dir(asset_dir):
@@ -44,8 +45,12 @@ def version_dir(instance_dir):
 
 
 def parent_asset(path):
-    pass
+    if os.path.isfile(path):
+        path = os.path.dirname(path)
+    return cquery.first_match(path, selector='.Asset', direction=cquery.UP)
 
 
 def parent_shot(path):
-    pass
+    if os.path.isfile(path):
+        path = os.path.dirname(path)
+    return cquery.first_match(path, selector='.Shot', direction=cquery.UP)
