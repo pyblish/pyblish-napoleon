@@ -16,15 +16,18 @@ class ExtractNapoleonMetadata(napoleon.plugin.Extractor):
     def process_instance(self, instance):
         data = dict()
 
-        for key in ('source', 'user', 'date'):
-            if instance.context.has_data(key):
-                data[key] = instance.context.data(key)
+        for source, target in {'current_file': 'source',
+                               'user': 'user',
+                               'date': 'date',
+                               'notes': 'description'}.iteritems():
+            if instance.context.has_data(source):
+                data[target] = instance.context.data(source)
 
-        if instance.has_data('description'):
-            data['description'] = instance.data('description')
+        if not instance.data('notesAsDescription'):
+            data.pop('description', None)
 
-        if instance.data('notesAsDescription'):
-            data['description'] = instance.data('notes')
+        # Filter empty values
+        data = dict((k, v) for (k, v) in data.iteritems() if v)
 
         with self.temp_dir() as temp_dir:
             for key, value in data.iteritems():
