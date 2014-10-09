@@ -1,0 +1,1405 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<using package='std'/>
+	<template name='template'>
+		<attribute name='body_CTL_rotateOrder' type='maya.enum'>
+			<label>Body CTL Rotate Order</label>
+		</attribute>
+		<attribute name='body_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Body CTL Rotate X</label>
+		</attribute>
+		<attribute name='body_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Body CTL Rotate Y</label>
+		</attribute>
+		<attribute name='body_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Body CTL Rotate Z</label>
+		</attribute>
+		<attribute name='body_CTL_scaleX' type='maya.double'>
+			<label>Body CTL Scale X</label>
+		</attribute>
+		<attribute name='body_CTL_scaleY' type='maya.double'>
+			<label>Body CTL Scale Y</label>
+		</attribute>
+		<attribute name='body_CTL_scaleZ' type='maya.double'>
+			<label>Body CTL Scale Z</label>
+		</attribute>
+		<attribute name='body_CTL_translateX' type='maya.doubleLinear'>
+			<label>Body CTL Translate X</label>
+		</attribute>
+		<attribute name='body_CTL_translateY' type='maya.doubleLinear'>
+			<label>Body CTL Translate Y</label>
+		</attribute>
+		<attribute name='body_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Body CTL Translate Z</label>
+		</attribute>
+		<attribute name='body_CTL_visibility' type='maya.bool'>
+			<label>Body CTL Visibility</label>
+		</attribute>
+		<attribute name='torso_CTL_rotateOrder' type='maya.enum'>
+			<label>Torso CTL Rotate Order</label>
+		</attribute>
+		<attribute name='torso_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Torso CTL Rotate X</label>
+		</attribute>
+		<attribute name='torso_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Torso CTL Rotate Y</label>
+		</attribute>
+		<attribute name='torso_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Torso CTL Rotate Z</label>
+		</attribute>
+		<attribute name='torso_CTL_scaleX' type='maya.double'>
+			<label>Torso CTL Scale X</label>
+		</attribute>
+		<attribute name='torso_CTL_scaleY' type='maya.double'>
+			<label>Torso CTL Scale Y</label>
+		</attribute>
+		<attribute name='torso_CTL_scaleZ' type='maya.double'>
+			<label>Torso CTL Scale Z</label>
+		</attribute>
+		<attribute name='torso_CTL_translateX' type='maya.doubleLinear'>
+			<label>Torso CTL Translate X</label>
+		</attribute>
+		<attribute name='torso_CTL_translateY' type='maya.doubleLinear'>
+			<label>Torso CTL Translate Y</label>
+		</attribute>
+		<attribute name='torso_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Torso CTL Translate Z</label>
+		</attribute>
+		<attribute name='torso_CTL_visibility' type='maya.bool'>
+			<label>Torso CTL Visibility</label>
+		</attribute>
+		<attribute name='chest_CTL_rotateOrder' type='maya.enum'>
+			<label>Chest CTL Rotate Order</label>
+		</attribute>
+		<attribute name='chest_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Chest CTL Rotate X</label>
+		</attribute>
+		<attribute name='chest_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Chest CTL Rotate Y</label>
+		</attribute>
+		<attribute name='chest_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Chest CTL Rotate Z</label>
+		</attribute>
+		<attribute name='chest_CTL_scaleX' type='maya.double'>
+			<label>Chest CTL Scale X</label>
+		</attribute>
+		<attribute name='chest_CTL_scaleY' type='maya.double'>
+			<label>Chest CTL Scale Y</label>
+		</attribute>
+		<attribute name='chest_CTL_scaleZ' type='maya.double'>
+			<label>Chest CTL Scale Z</label>
+		</attribute>
+		<attribute name='chest_CTL_translateX' type='maya.doubleLinear'>
+			<label>Chest CTL Translate X</label>
+		</attribute>
+		<attribute name='chest_CTL_translateY' type='maya.doubleLinear'>
+			<label>Chest CTL Translate Y</label>
+		</attribute>
+		<attribute name='chest_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Chest CTL Translate Z</label>
+		</attribute>
+		<attribute name='chest_CTL_visibility' type='maya.bool'>
+			<label>Chest CTL Visibility</label>
+		</attribute>
+		<attribute name='shoulders_CTL_rotateOrder' type='maya.enum'>
+			<label>Shoulders CTL Rotate Order</label>
+		</attribute>
+		<attribute name='shoulders_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Shoulders CTL Rotate X</label>
+		</attribute>
+		<attribute name='shoulders_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Shoulders CTL Rotate Y</label>
+		</attribute>
+		<attribute name='shoulders_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Shoulders CTL Rotate Z</label>
+		</attribute>
+		<attribute name='shoulders_CTL_scaleX' type='maya.double'>
+			<label>Shoulders CTL Scale X</label>
+		</attribute>
+		<attribute name='shoulders_CTL_scaleY' type='maya.double'>
+			<label>Shoulders CTL Scale Y</label>
+		</attribute>
+		<attribute name='shoulders_CTL_scaleZ' type='maya.double'>
+			<label>Shoulders CTL Scale Z</label>
+		</attribute>
+		<attribute name='shoulders_CTL_translateX' type='maya.doubleLinear'>
+			<label>Shoulders CTL Translate X</label>
+		</attribute>
+		<attribute name='shoulders_CTL_translateY' type='maya.doubleLinear'>
+			<label>Shoulders CTL Translate Y</label>
+		</attribute>
+		<attribute name='shoulders_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Shoulders CTL Translate Z</label>
+		</attribute>
+		<attribute name='shoulders_CTL_visibility' type='maya.bool'>
+			<label>Shoulders CTL Visibility</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_rotateOrder' type='maya.enum'>
+			<label>L Clavicle CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Clavicle CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Clavicle CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Clavicle CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_scaleX' type='maya.double'>
+			<label>L Clavicle CTL Scale X</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_scaleY' type='maya.double'>
+			<label>L Clavicle CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_scaleZ' type='maya.double'>
+			<label>L Clavicle CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Clavicle CTL Translate X</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Clavicle CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Clavicle CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_clavicle_CTL_visibility' type='maya.bool'>
+			<label>L Clavicle CTL Visibility</label>
+		</attribute>
+		<attribute name='L_arm_CTL_fkIk' type='maya.double'>
+			<label>L Arm CTL Fk Ik</label>
+		</attribute>
+		<attribute name='L_arm_CTL_rotateOrder' type='maya.enum'>
+			<label>L Arm CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_arm_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Arm CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_arm_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Arm CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_arm_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Arm CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_arm_CTL_scaleX' type='maya.double'>
+			<label>L Arm CTL Scale X</label>
+		</attribute>
+		<attribute name='L_arm_CTL_scaleY' type='maya.double'>
+			<label>L Arm CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_arm_CTL_scaleZ' type='maya.double'>
+			<label>L Arm CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_arm_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Arm CTL Translate X</label>
+		</attribute>
+		<attribute name='L_arm_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Arm CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_arm_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Arm CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_arm_CTL_visibility' type='maya.bool'>
+			<label>L Arm CTL Visibility</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_rotateOrder' type='maya.enum'>
+			<label>L Elbow CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Elbow CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Elbow CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Elbow CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_scaleX' type='maya.double'>
+			<label>L Elbow CTL Scale X</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_scaleY' type='maya.double'>
+			<label>L Elbow CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_scaleZ' type='maya.double'>
+			<label>L Elbow CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Elbow CTL Translate X</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Elbow CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Elbow CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_elbow_CTL_visibility' type='maya.bool'>
+			<label>L Elbow CTL Visibility</label>
+		</attribute>
+		<attribute name='L_hand_CTL_rotateOrder' type='maya.enum'>
+			<label>L Hand CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_hand_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Hand CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_hand_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Hand CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_hand_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Hand CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_hand_CTL_scaleX' type='maya.double'>
+			<label>L Hand CTL Scale X</label>
+		</attribute>
+		<attribute name='L_hand_CTL_scaleY' type='maya.double'>
+			<label>L Hand CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_hand_CTL_scaleZ' type='maya.double'>
+			<label>L Hand CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_hand_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Hand CTL Translate X</label>
+		</attribute>
+		<attribute name='L_hand_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Hand CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_hand_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Hand CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_hand_CTL_visibility' type='maya.bool'>
+			<label>L Hand CTL Visibility</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_rotateOrder' type='maya.enum'>
+			<label>R Clavicle CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Clavicle CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Clavicle CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Clavicle CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_scaleX' type='maya.double'>
+			<label>R Clavicle CTL Scale X</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_scaleY' type='maya.double'>
+			<label>R Clavicle CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_scaleZ' type='maya.double'>
+			<label>R Clavicle CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Clavicle CTL Translate X</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Clavicle CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Clavicle CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_clavicle_CTL_visibility' type='maya.bool'>
+			<label>R Clavicle CTL Visibility</label>
+		</attribute>
+		<attribute name='R_arm_CTL_fkIk' type='maya.double'>
+			<label>R Arm CTL Fk Ik</label>
+		</attribute>
+		<attribute name='R_arm_CTL_rotateOrder' type='maya.enum'>
+			<label>R Arm CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_arm_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Arm CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_arm_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Arm CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_arm_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Arm CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_arm_CTL_scaleX' type='maya.double'>
+			<label>R Arm CTL Scale X</label>
+		</attribute>
+		<attribute name='R_arm_CTL_scaleY' type='maya.double'>
+			<label>R Arm CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_arm_CTL_scaleZ' type='maya.double'>
+			<label>R Arm CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_arm_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Arm CTL Translate X</label>
+		</attribute>
+		<attribute name='R_arm_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Arm CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_arm_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Arm CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_arm_CTL_visibility' type='maya.bool'>
+			<label>R Arm CTL Visibility</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_rotateOrder' type='maya.enum'>
+			<label>R Elbow CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Elbow CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Elbow CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Elbow CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_scaleX' type='maya.double'>
+			<label>R Elbow CTL Scale X</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_scaleY' type='maya.double'>
+			<label>R Elbow CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_scaleZ' type='maya.double'>
+			<label>R Elbow CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Elbow CTL Translate X</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Elbow CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Elbow CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_elbow_CTL_visibility' type='maya.bool'>
+			<label>R Elbow CTL Visibility</label>
+		</attribute>
+		<attribute name='R_hand_CTL_rotateOrder' type='maya.enum'>
+			<label>R Hand CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_hand_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Hand CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_hand_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Hand CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_hand_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Hand CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_hand_CTL_scaleX' type='maya.double'>
+			<label>R Hand CTL Scale X</label>
+		</attribute>
+		<attribute name='R_hand_CTL_scaleY' type='maya.double'>
+			<label>R Hand CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_hand_CTL_scaleZ' type='maya.double'>
+			<label>R Hand CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_hand_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Hand CTL Translate X</label>
+		</attribute>
+		<attribute name='R_hand_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Hand CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_hand_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Hand CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_hand_CTL_visibility' type='maya.bool'>
+			<label>R Hand CTL Visibility</label>
+		</attribute>
+		<attribute name='neck_CTL_rotateOrder' type='maya.enum'>
+			<label>Neck CTL Rotate Order</label>
+		</attribute>
+		<attribute name='neck_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Neck CTL Rotate X</label>
+		</attribute>
+		<attribute name='neck_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Neck CTL Rotate Y</label>
+		</attribute>
+		<attribute name='neck_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Neck CTL Rotate Z</label>
+		</attribute>
+		<attribute name='neck_CTL_scaleX' type='maya.double'>
+			<label>Neck CTL Scale X</label>
+		</attribute>
+		<attribute name='neck_CTL_scaleY' type='maya.double'>
+			<label>Neck CTL Scale Y</label>
+		</attribute>
+		<attribute name='neck_CTL_scaleZ' type='maya.double'>
+			<label>Neck CTL Scale Z</label>
+		</attribute>
+		<attribute name='neck_CTL_translateX' type='maya.doubleLinear'>
+			<label>Neck CTL Translate X</label>
+		</attribute>
+		<attribute name='neck_CTL_translateY' type='maya.doubleLinear'>
+			<label>Neck CTL Translate Y</label>
+		</attribute>
+		<attribute name='neck_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Neck CTL Translate Z</label>
+		</attribute>
+		<attribute name='neck_CTL_visibility' type='maya.bool'>
+			<label>Neck CTL Visibility</label>
+		</attribute>
+		<attribute name='head_CTL_rotateOrder' type='maya.enum'>
+			<label>Head CTL Rotate Order</label>
+		</attribute>
+		<attribute name='head_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Head CTL Rotate X</label>
+		</attribute>
+		<attribute name='head_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Head CTL Rotate Y</label>
+		</attribute>
+		<attribute name='head_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Head CTL Rotate Z</label>
+		</attribute>
+		<attribute name='head_CTL_scaleX' type='maya.double'>
+			<label>Head CTL Scale X</label>
+		</attribute>
+		<attribute name='head_CTL_scaleY' type='maya.double'>
+			<label>Head CTL Scale Y</label>
+		</attribute>
+		<attribute name='head_CTL_scaleZ' type='maya.double'>
+			<label>Head CTL Scale Z</label>
+		</attribute>
+		<attribute name='head_CTL_translateX' type='maya.doubleLinear'>
+			<label>Head CTL Translate X</label>
+		</attribute>
+		<attribute name='head_CTL_translateY' type='maya.doubleLinear'>
+			<label>Head CTL Translate Y</label>
+		</attribute>
+		<attribute name='head_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Head CTL Translate Z</label>
+		</attribute>
+		<attribute name='head_CTL_visibility' type='maya.bool'>
+			<label>Head CTL Visibility</label>
+		</attribute>
+		<attribute name='hip_CTL_rotateOrder' type='maya.enum'>
+			<label>Hip CTL Rotate Order</label>
+		</attribute>
+		<attribute name='hip_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Hip CTL Rotate X</label>
+		</attribute>
+		<attribute name='hip_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Hip CTL Rotate Y</label>
+		</attribute>
+		<attribute name='hip_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Hip CTL Rotate Z</label>
+		</attribute>
+		<attribute name='hip_CTL_scaleX' type='maya.double'>
+			<label>Hip CTL Scale X</label>
+		</attribute>
+		<attribute name='hip_CTL_scaleY' type='maya.double'>
+			<label>Hip CTL Scale Y</label>
+		</attribute>
+		<attribute name='hip_CTL_scaleZ' type='maya.double'>
+			<label>Hip CTL Scale Z</label>
+		</attribute>
+		<attribute name='hip_CTL_translateX' type='maya.doubleLinear'>
+			<label>Hip CTL Translate X</label>
+		</attribute>
+		<attribute name='hip_CTL_translateY' type='maya.doubleLinear'>
+			<label>Hip CTL Translate Y</label>
+		</attribute>
+		<attribute name='hip_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Hip CTL Translate Z</label>
+		</attribute>
+		<attribute name='hip_CTL_visibility' type='maya.bool'>
+			<label>Hip CTL Visibility</label>
+		</attribute>
+		<attribute name='R_leg_CTL_fkIk' type='maya.double'>
+			<label>R Leg CTL Fk Ik</label>
+		</attribute>
+		<attribute name='R_leg_CTL_rotateOrder' type='maya.enum'>
+			<label>R Leg CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_leg_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Leg CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_leg_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Leg CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_leg_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Leg CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_leg_CTL_scaleX' type='maya.double'>
+			<label>R Leg CTL Scale X</label>
+		</attribute>
+		<attribute name='R_leg_CTL_scaleY' type='maya.double'>
+			<label>R Leg CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_leg_CTL_scaleZ' type='maya.double'>
+			<label>R Leg CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_leg_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Leg CTL Translate X</label>
+		</attribute>
+		<attribute name='R_leg_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Leg CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_leg_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Leg CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_leg_CTL_visibility' type='maya.bool'>
+			<label>R Leg CTL Visibility</label>
+		</attribute>
+		<attribute name='R_knee_CTL_rotateOrder' type='maya.enum'>
+			<label>R Knee CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_knee_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Knee CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_knee_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Knee CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_knee_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Knee CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_knee_CTL_scaleX' type='maya.double'>
+			<label>R Knee CTL Scale X</label>
+		</attribute>
+		<attribute name='R_knee_CTL_scaleY' type='maya.double'>
+			<label>R Knee CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_knee_CTL_scaleZ' type='maya.double'>
+			<label>R Knee CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_knee_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Knee CTL Translate X</label>
+		</attribute>
+		<attribute name='R_knee_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Knee CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_knee_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Knee CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_knee_CTL_visibility' type='maya.bool'>
+			<label>R Knee CTL Visibility</label>
+		</attribute>
+		<attribute name='R_foot_CTL_rotateOrder' type='maya.enum'>
+			<label>R Foot CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_foot_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Foot CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_foot_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Foot CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_foot_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Foot CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_foot_CTL_scaleX' type='maya.double'>
+			<label>R Foot CTL Scale X</label>
+		</attribute>
+		<attribute name='R_foot_CTL_scaleY' type='maya.double'>
+			<label>R Foot CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_foot_CTL_scaleZ' type='maya.double'>
+			<label>R Foot CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_foot_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Foot CTL Translate X</label>
+		</attribute>
+		<attribute name='R_foot_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Foot CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_foot_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Foot CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_foot_CTL_visibility' type='maya.bool'>
+			<label>R Foot CTL Visibility</label>
+		</attribute>
+		<attribute name='L_leg_CTL_fkIk' type='maya.double'>
+			<label>L Leg CTL Fk Ik</label>
+		</attribute>
+		<attribute name='L_leg_CTL_rotateOrder' type='maya.enum'>
+			<label>L Leg CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_leg_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Leg CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_leg_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Leg CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_leg_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Leg CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_leg_CTL_scaleX' type='maya.double'>
+			<label>L Leg CTL Scale X</label>
+		</attribute>
+		<attribute name='L_leg_CTL_scaleY' type='maya.double'>
+			<label>L Leg CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_leg_CTL_scaleZ' type='maya.double'>
+			<label>L Leg CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_leg_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Leg CTL Translate X</label>
+		</attribute>
+		<attribute name='L_leg_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Leg CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_leg_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Leg CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_leg_CTL_visibility' type='maya.bool'>
+			<label>L Leg CTL Visibility</label>
+		</attribute>
+		<attribute name='L_knee_CTL_rotateOrder' type='maya.enum'>
+			<label>L Knee CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_knee_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Knee CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_knee_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Knee CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_knee_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Knee CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_knee_CTL_scaleX' type='maya.double'>
+			<label>L Knee CTL Scale X</label>
+		</attribute>
+		<attribute name='L_knee_CTL_scaleY' type='maya.double'>
+			<label>L Knee CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_knee_CTL_scaleZ' type='maya.double'>
+			<label>L Knee CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_knee_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Knee CTL Translate X</label>
+		</attribute>
+		<attribute name='L_knee_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Knee CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_knee_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Knee CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_knee_CTL_visibility' type='maya.bool'>
+			<label>L Knee CTL Visibility</label>
+		</attribute>
+		<attribute name='L_foot_CTL_rotateOrder' type='maya.enum'>
+			<label>L Foot CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_foot_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Foot CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_foot_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Foot CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_foot_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Foot CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_foot_CTL_scaleX' type='maya.double'>
+			<label>L Foot CTL Scale X</label>
+		</attribute>
+		<attribute name='L_foot_CTL_scaleY' type='maya.double'>
+			<label>L Foot CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_foot_CTL_scaleZ' type='maya.double'>
+			<label>L Foot CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_foot_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Foot CTL Translate X</label>
+		</attribute>
+		<attribute name='L_foot_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Foot CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_foot_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Foot CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_foot_CTL_visibility' type='maya.bool'>
+			<label>L Foot CTL Visibility</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_rotateOrder' type='maya.enum'>
+			<label>L Leg Pole Vector CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Leg Pole Vector CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Leg Pole Vector CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Leg Pole Vector CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_scaleX' type='maya.double'>
+			<label>L Leg Pole Vector CTL Scale X</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_scaleY' type='maya.double'>
+			<label>L Leg Pole Vector CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_scaleZ' type='maya.double'>
+			<label>L Leg Pole Vector CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Leg Pole Vector CTL Translate X</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Leg Pole Vector CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Leg Pole Vector CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_legPoleVector_CTL_visibility' type='maya.bool'>
+			<label>L Leg Pole Vector CTL Visibility</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_rotateOrder' type='maya.enum'>
+			<label>R Leg Pole Vector CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Leg Pole Vector CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Leg Pole Vector CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Leg Pole Vector CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_scaleX' type='maya.double'>
+			<label>R Leg Pole Vector CTL Scale X</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_scaleY' type='maya.double'>
+			<label>R Leg Pole Vector CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_scaleZ' type='maya.double'>
+			<label>R Leg Pole Vector CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Leg Pole Vector CTL Translate X</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Leg Pole Vector CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Leg Pole Vector CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_legPoleVector_CTL_visibility' type='maya.bool'>
+			<label>R Leg Pole Vector CTL Visibility</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_rotateOrder' type='maya.enum'>
+			<label>L Foot Ik CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Foot Ik CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Foot Ik CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Foot Ik CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_scaleX' type='maya.double'>
+			<label>L Foot Ik CTL Scale X</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_scaleY' type='maya.double'>
+			<label>L Foot Ik CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_scaleZ' type='maya.double'>
+			<label>L Foot Ik CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Foot Ik CTL Translate X</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Foot Ik CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Foot Ik CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_foot_ik_CTL_visibility' type='maya.bool'>
+			<label>L Foot Ik CTL Visibility</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_rotateOrder' type='maya.enum'>
+			<label>R Foot Ik CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Foot Ik CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Foot Ik CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Foot Ik CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_scaleX' type='maya.double'>
+			<label>R Foot Ik CTL Scale X</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_scaleY' type='maya.double'>
+			<label>R Foot Ik CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_scaleZ' type='maya.double'>
+			<label>R Foot Ik CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Foot Ik CTL Translate X</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Foot Ik CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Foot Ik CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_foot_ik_CTL_visibility' type='maya.bool'>
+			<label>R Foot Ik CTL Visibility</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_rotateOrder' type='maya.enum'>
+			<label>L Hand Ik CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Hand Ik CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Hand Ik CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Hand Ik CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_scaleX' type='maya.double'>
+			<label>L Hand Ik CTL Scale X</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_scaleY' type='maya.double'>
+			<label>L Hand Ik CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_scaleZ' type='maya.double'>
+			<label>L Hand Ik CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Hand Ik CTL Translate X</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Hand Ik CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Hand Ik CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_hand_ik_CTL_visibility' type='maya.bool'>
+			<label>L Hand Ik CTL Visibility</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_rotateOrder' type='maya.enum'>
+			<label>R Hand Ik CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Hand Ik CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Hand Ik CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Hand Ik CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_scaleX' type='maya.double'>
+			<label>R Hand Ik CTL Scale X</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_scaleY' type='maya.double'>
+			<label>R Hand Ik CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_scaleZ' type='maya.double'>
+			<label>R Hand Ik CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Hand Ik CTL Translate X</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Hand Ik CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Hand Ik CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_hand_ik_CTL_visibility' type='maya.bool'>
+			<label>R Hand Ik CTL Visibility</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_rotateOrder' type='maya.enum'>
+			<label>L Arm Pole Vector CTL Rotate Order</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_rotateX' type='maya.doubleAngle'>
+			<label>L Arm Pole Vector CTL Rotate X</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_rotateY' type='maya.doubleAngle'>
+			<label>L Arm Pole Vector CTL Rotate Y</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>L Arm Pole Vector CTL Rotate Z</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_scaleX' type='maya.double'>
+			<label>L Arm Pole Vector CTL Scale X</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_scaleY' type='maya.double'>
+			<label>L Arm Pole Vector CTL Scale Y</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_scaleZ' type='maya.double'>
+			<label>L Arm Pole Vector CTL Scale Z</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_translateX' type='maya.doubleLinear'>
+			<label>L Arm Pole Vector CTL Translate X</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_translateY' type='maya.doubleLinear'>
+			<label>L Arm Pole Vector CTL Translate Y</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_translateZ' type='maya.doubleLinear'>
+			<label>L Arm Pole Vector CTL Translate Z</label>
+		</attribute>
+		<attribute name='L_armPoleVector_CTL_visibility' type='maya.bool'>
+			<label>L Arm Pole Vector CTL Visibility</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_rotateOrder' type='maya.enum'>
+			<label>R Arm Pole Vector CTL Rotate Order</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_rotateX' type='maya.doubleAngle'>
+			<label>R Arm Pole Vector CTL Rotate X</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_rotateY' type='maya.doubleAngle'>
+			<label>R Arm Pole Vector CTL Rotate Y</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>R Arm Pole Vector CTL Rotate Z</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_scaleX' type='maya.double'>
+			<label>R Arm Pole Vector CTL Scale X</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_scaleY' type='maya.double'>
+			<label>R Arm Pole Vector CTL Scale Y</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_scaleZ' type='maya.double'>
+			<label>R Arm Pole Vector CTL Scale Z</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_translateX' type='maya.doubleLinear'>
+			<label>R Arm Pole Vector CTL Translate X</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_translateY' type='maya.doubleLinear'>
+			<label>R Arm Pole Vector CTL Translate Y</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_translateZ' type='maya.doubleLinear'>
+			<label>R Arm Pole Vector CTL Translate Z</label>
+		</attribute>
+		<attribute name='R_armPoleVector_CTL_visibility' type='maya.bool'>
+			<label>R Arm Pole Vector CTL Visibility</label>
+		</attribute>
+		<attribute name='main_CTL_rotateOrder' type='maya.enum'>
+			<label>Main CTL Rotate Order</label>
+		</attribute>
+		<attribute name='main_CTL_rotateX' type='maya.doubleAngle'>
+			<label>Main CTL Rotate X</label>
+		</attribute>
+		<attribute name='main_CTL_rotateY' type='maya.doubleAngle'>
+			<label>Main CTL Rotate Y</label>
+		</attribute>
+		<attribute name='main_CTL_rotateZ' type='maya.doubleAngle'>
+			<label>Main CTL Rotate Z</label>
+		</attribute>
+		<attribute name='main_CTL_scaleX' type='maya.double'>
+			<label>Main CTL Scale X</label>
+		</attribute>
+		<attribute name='main_CTL_scaleY' type='maya.double'>
+			<label>Main CTL Scale Y</label>
+		</attribute>
+		<attribute name='main_CTL_scaleZ' type='maya.double'>
+			<label>Main CTL Scale Z</label>
+		</attribute>
+		<attribute name='main_CTL_translateX' type='maya.doubleLinear'>
+			<label>Main CTL Translate X</label>
+		</attribute>
+		<attribute name='main_CTL_translateY' type='maya.doubleLinear'>
+			<label>Main CTL Translate Y</label>
+		</attribute>
+		<attribute name='main_CTL_translateZ' type='maya.doubleLinear'>
+			<label>Main CTL Translate Z</label>
+		</attribute>
+		<attribute name='main_CTL_visibility' type='maya.bool'>
+			<label>Main CTL Visibility</label>
+		</attribute>
+	</template>
+	<view name='0' template='template'>
+		<group name='body_CTL'>
+			<property name='body_CTL_rotateOrder'/>
+			<property name='body_CTL_rotateX'/>
+			<property name='body_CTL_rotateY'/>
+			<property name='body_CTL_rotateZ'/>
+			<property name='body_CTL_scaleX'/>
+			<property name='body_CTL_scaleY'/>
+			<property name='body_CTL_scaleZ'/>
+			<property name='body_CTL_translateX'/>
+			<property name='body_CTL_translateY'/>
+			<property name='body_CTL_translateZ'/>
+			<property name='body_CTL_visibility'/>
+		</group>
+		<group name='torso_CTL'>
+			<property name='torso_CTL_rotateOrder'/>
+			<property name='torso_CTL_rotateX'/>
+			<property name='torso_CTL_rotateY'/>
+			<property name='torso_CTL_rotateZ'/>
+			<property name='torso_CTL_scaleX'/>
+			<property name='torso_CTL_scaleY'/>
+			<property name='torso_CTL_scaleZ'/>
+			<property name='torso_CTL_translateX'/>
+			<property name='torso_CTL_translateY'/>
+			<property name='torso_CTL_translateZ'/>
+			<property name='torso_CTL_visibility'/>
+		</group>
+		<group name='chest_CTL'>
+			<property name='chest_CTL_rotateOrder'/>
+			<property name='chest_CTL_rotateX'/>
+			<property name='chest_CTL_rotateY'/>
+			<property name='chest_CTL_rotateZ'/>
+			<property name='chest_CTL_scaleX'/>
+			<property name='chest_CTL_scaleY'/>
+			<property name='chest_CTL_scaleZ'/>
+			<property name='chest_CTL_translateX'/>
+			<property name='chest_CTL_translateY'/>
+			<property name='chest_CTL_translateZ'/>
+			<property name='chest_CTL_visibility'/>
+		</group>
+		<group name='shoulders_CTL'>
+			<property name='shoulders_CTL_rotateOrder'/>
+			<property name='shoulders_CTL_rotateX'/>
+			<property name='shoulders_CTL_rotateY'/>
+			<property name='shoulders_CTL_rotateZ'/>
+			<property name='shoulders_CTL_scaleX'/>
+			<property name='shoulders_CTL_scaleY'/>
+			<property name='shoulders_CTL_scaleZ'/>
+			<property name='shoulders_CTL_translateX'/>
+			<property name='shoulders_CTL_translateY'/>
+			<property name='shoulders_CTL_translateZ'/>
+			<property name='shoulders_CTL_visibility'/>
+		</group>
+		<group name='L_clavicle_CTL'>
+			<property name='L_clavicle_CTL_rotateOrder'/>
+			<property name='L_clavicle_CTL_rotateX'/>
+			<property name='L_clavicle_CTL_rotateY'/>
+			<property name='L_clavicle_CTL_rotateZ'/>
+			<property name='L_clavicle_CTL_scaleX'/>
+			<property name='L_clavicle_CTL_scaleY'/>
+			<property name='L_clavicle_CTL_scaleZ'/>
+			<property name='L_clavicle_CTL_translateX'/>
+			<property name='L_clavicle_CTL_translateY'/>
+			<property name='L_clavicle_CTL_translateZ'/>
+			<property name='L_clavicle_CTL_visibility'/>
+		</group>
+		<group name='L_arm_CTL'>
+			<property name='L_arm_CTL_fkIk'/>
+			<property name='L_arm_CTL_rotateOrder'/>
+			<property name='L_arm_CTL_rotateX'/>
+			<property name='L_arm_CTL_rotateY'/>
+			<property name='L_arm_CTL_rotateZ'/>
+			<property name='L_arm_CTL_scaleX'/>
+			<property name='L_arm_CTL_scaleY'/>
+			<property name='L_arm_CTL_scaleZ'/>
+			<property name='L_arm_CTL_translateX'/>
+			<property name='L_arm_CTL_translateY'/>
+			<property name='L_arm_CTL_translateZ'/>
+			<property name='L_arm_CTL_visibility'/>
+		</group>
+		<group name='L_elbow_CTL'>
+			<property name='L_elbow_CTL_rotateOrder'/>
+			<property name='L_elbow_CTL_rotateX'/>
+			<property name='L_elbow_CTL_rotateY'/>
+			<property name='L_elbow_CTL_rotateZ'/>
+			<property name='L_elbow_CTL_scaleX'/>
+			<property name='L_elbow_CTL_scaleY'/>
+			<property name='L_elbow_CTL_scaleZ'/>
+			<property name='L_elbow_CTL_translateX'/>
+			<property name='L_elbow_CTL_translateY'/>
+			<property name='L_elbow_CTL_translateZ'/>
+			<property name='L_elbow_CTL_visibility'/>
+		</group>
+		<group name='L_hand_CTL'>
+			<property name='L_hand_CTL_rotateOrder'/>
+			<property name='L_hand_CTL_rotateX'/>
+			<property name='L_hand_CTL_rotateY'/>
+			<property name='L_hand_CTL_rotateZ'/>
+			<property name='L_hand_CTL_scaleX'/>
+			<property name='L_hand_CTL_scaleY'/>
+			<property name='L_hand_CTL_scaleZ'/>
+			<property name='L_hand_CTL_translateX'/>
+			<property name='L_hand_CTL_translateY'/>
+			<property name='L_hand_CTL_translateZ'/>
+			<property name='L_hand_CTL_visibility'/>
+		</group>
+		<group name='R_clavicle_CTL'>
+			<property name='R_clavicle_CTL_rotateOrder'/>
+			<property name='R_clavicle_CTL_rotateX'/>
+			<property name='R_clavicle_CTL_rotateY'/>
+			<property name='R_clavicle_CTL_rotateZ'/>
+			<property name='R_clavicle_CTL_scaleX'/>
+			<property name='R_clavicle_CTL_scaleY'/>
+			<property name='R_clavicle_CTL_scaleZ'/>
+			<property name='R_clavicle_CTL_translateX'/>
+			<property name='R_clavicle_CTL_translateY'/>
+			<property name='R_clavicle_CTL_translateZ'/>
+			<property name='R_clavicle_CTL_visibility'/>
+		</group>
+		<group name='R_arm_CTL'>
+			<property name='R_arm_CTL_fkIk'/>
+			<property name='R_arm_CTL_rotateOrder'/>
+			<property name='R_arm_CTL_rotateX'/>
+			<property name='R_arm_CTL_rotateY'/>
+			<property name='R_arm_CTL_rotateZ'/>
+			<property name='R_arm_CTL_scaleX'/>
+			<property name='R_arm_CTL_scaleY'/>
+			<property name='R_arm_CTL_scaleZ'/>
+			<property name='R_arm_CTL_translateX'/>
+			<property name='R_arm_CTL_translateY'/>
+			<property name='R_arm_CTL_translateZ'/>
+			<property name='R_arm_CTL_visibility'/>
+		</group>
+		<group name='R_elbow_CTL'>
+			<property name='R_elbow_CTL_rotateOrder'/>
+			<property name='R_elbow_CTL_rotateX'/>
+			<property name='R_elbow_CTL_rotateY'/>
+			<property name='R_elbow_CTL_rotateZ'/>
+			<property name='R_elbow_CTL_scaleX'/>
+			<property name='R_elbow_CTL_scaleY'/>
+			<property name='R_elbow_CTL_scaleZ'/>
+			<property name='R_elbow_CTL_translateX'/>
+			<property name='R_elbow_CTL_translateY'/>
+			<property name='R_elbow_CTL_translateZ'/>
+			<property name='R_elbow_CTL_visibility'/>
+		</group>
+		<group name='R_hand_CTL'>
+			<property name='R_hand_CTL_rotateOrder'/>
+			<property name='R_hand_CTL_rotateX'/>
+			<property name='R_hand_CTL_rotateY'/>
+			<property name='R_hand_CTL_rotateZ'/>
+			<property name='R_hand_CTL_scaleX'/>
+			<property name='R_hand_CTL_scaleY'/>
+			<property name='R_hand_CTL_scaleZ'/>
+			<property name='R_hand_CTL_translateX'/>
+			<property name='R_hand_CTL_translateY'/>
+			<property name='R_hand_CTL_translateZ'/>
+			<property name='R_hand_CTL_visibility'/>
+		</group>
+		<group name='neck_CTL'>
+			<property name='neck_CTL_rotateOrder'/>
+			<property name='neck_CTL_rotateX'/>
+			<property name='neck_CTL_rotateY'/>
+			<property name='neck_CTL_rotateZ'/>
+			<property name='neck_CTL_scaleX'/>
+			<property name='neck_CTL_scaleY'/>
+			<property name='neck_CTL_scaleZ'/>
+			<property name='neck_CTL_translateX'/>
+			<property name='neck_CTL_translateY'/>
+			<property name='neck_CTL_translateZ'/>
+			<property name='neck_CTL_visibility'/>
+		</group>
+		<group name='head_CTL'>
+			<property name='head_CTL_rotateOrder'/>
+			<property name='head_CTL_rotateX'/>
+			<property name='head_CTL_rotateY'/>
+			<property name='head_CTL_rotateZ'/>
+			<property name='head_CTL_scaleX'/>
+			<property name='head_CTL_scaleY'/>
+			<property name='head_CTL_scaleZ'/>
+			<property name='head_CTL_translateX'/>
+			<property name='head_CTL_translateY'/>
+			<property name='head_CTL_translateZ'/>
+			<property name='head_CTL_visibility'/>
+		</group>
+		<group name='hip_CTL'>
+			<property name='hip_CTL_rotateOrder'/>
+			<property name='hip_CTL_rotateX'/>
+			<property name='hip_CTL_rotateY'/>
+			<property name='hip_CTL_rotateZ'/>
+			<property name='hip_CTL_scaleX'/>
+			<property name='hip_CTL_scaleY'/>
+			<property name='hip_CTL_scaleZ'/>
+			<property name='hip_CTL_translateX'/>
+			<property name='hip_CTL_translateY'/>
+			<property name='hip_CTL_translateZ'/>
+			<property name='hip_CTL_visibility'/>
+		</group>
+		<group name='R_leg_CTL'>
+			<property name='R_leg_CTL_fkIk'/>
+			<property name='R_leg_CTL_rotateOrder'/>
+			<property name='R_leg_CTL_rotateX'/>
+			<property name='R_leg_CTL_rotateY'/>
+			<property name='R_leg_CTL_rotateZ'/>
+			<property name='R_leg_CTL_scaleX'/>
+			<property name='R_leg_CTL_scaleY'/>
+			<property name='R_leg_CTL_scaleZ'/>
+			<property name='R_leg_CTL_translateX'/>
+			<property name='R_leg_CTL_translateY'/>
+			<property name='R_leg_CTL_translateZ'/>
+			<property name='R_leg_CTL_visibility'/>
+		</group>
+		<group name='R_knee_CTL'>
+			<property name='R_knee_CTL_rotateOrder'/>
+			<property name='R_knee_CTL_rotateX'/>
+			<property name='R_knee_CTL_rotateY'/>
+			<property name='R_knee_CTL_rotateZ'/>
+			<property name='R_knee_CTL_scaleX'/>
+			<property name='R_knee_CTL_scaleY'/>
+			<property name='R_knee_CTL_scaleZ'/>
+			<property name='R_knee_CTL_translateX'/>
+			<property name='R_knee_CTL_translateY'/>
+			<property name='R_knee_CTL_translateZ'/>
+			<property name='R_knee_CTL_visibility'/>
+		</group>
+		<group name='R_foot_CTL'>
+			<property name='R_foot_CTL_rotateOrder'/>
+			<property name='R_foot_CTL_rotateX'/>
+			<property name='R_foot_CTL_rotateY'/>
+			<property name='R_foot_CTL_rotateZ'/>
+			<property name='R_foot_CTL_scaleX'/>
+			<property name='R_foot_CTL_scaleY'/>
+			<property name='R_foot_CTL_scaleZ'/>
+			<property name='R_foot_CTL_translateX'/>
+			<property name='R_foot_CTL_translateY'/>
+			<property name='R_foot_CTL_translateZ'/>
+			<property name='R_foot_CTL_visibility'/>
+		</group>
+		<group name='L_leg_CTL'>
+			<property name='L_leg_CTL_fkIk'/>
+			<property name='L_leg_CTL_rotateOrder'/>
+			<property name='L_leg_CTL_rotateX'/>
+			<property name='L_leg_CTL_rotateY'/>
+			<property name='L_leg_CTL_rotateZ'/>
+			<property name='L_leg_CTL_scaleX'/>
+			<property name='L_leg_CTL_scaleY'/>
+			<property name='L_leg_CTL_scaleZ'/>
+			<property name='L_leg_CTL_translateX'/>
+			<property name='L_leg_CTL_translateY'/>
+			<property name='L_leg_CTL_translateZ'/>
+			<property name='L_leg_CTL_visibility'/>
+		</group>
+		<group name='L_knee_CTL'>
+			<property name='L_knee_CTL_rotateOrder'/>
+			<property name='L_knee_CTL_rotateX'/>
+			<property name='L_knee_CTL_rotateY'/>
+			<property name='L_knee_CTL_rotateZ'/>
+			<property name='L_knee_CTL_scaleX'/>
+			<property name='L_knee_CTL_scaleY'/>
+			<property name='L_knee_CTL_scaleZ'/>
+			<property name='L_knee_CTL_translateX'/>
+			<property name='L_knee_CTL_translateY'/>
+			<property name='L_knee_CTL_translateZ'/>
+			<property name='L_knee_CTL_visibility'/>
+		</group>
+		<group name='L_foot_CTL'>
+			<property name='L_foot_CTL_rotateOrder'/>
+			<property name='L_foot_CTL_rotateX'/>
+			<property name='L_foot_CTL_rotateY'/>
+			<property name='L_foot_CTL_rotateZ'/>
+			<property name='L_foot_CTL_scaleX'/>
+			<property name='L_foot_CTL_scaleY'/>
+			<property name='L_foot_CTL_scaleZ'/>
+			<property name='L_foot_CTL_translateX'/>
+			<property name='L_foot_CTL_translateY'/>
+			<property name='L_foot_CTL_translateZ'/>
+			<property name='L_foot_CTL_visibility'/>
+		</group>
+		<group name='L_legPoleVector_CTL'>
+			<property name='L_legPoleVector_CTL_rotateOrder'/>
+			<property name='L_legPoleVector_CTL_rotateX'/>
+			<property name='L_legPoleVector_CTL_rotateY'/>
+			<property name='L_legPoleVector_CTL_rotateZ'/>
+			<property name='L_legPoleVector_CTL_scaleX'/>
+			<property name='L_legPoleVector_CTL_scaleY'/>
+			<property name='L_legPoleVector_CTL_scaleZ'/>
+			<property name='L_legPoleVector_CTL_translateX'/>
+			<property name='L_legPoleVector_CTL_translateY'/>
+			<property name='L_legPoleVector_CTL_translateZ'/>
+			<property name='L_legPoleVector_CTL_visibility'/>
+		</group>
+		<group name='R_legPoleVector_CTL'>
+			<property name='R_legPoleVector_CTL_rotateOrder'/>
+			<property name='R_legPoleVector_CTL_rotateX'/>
+			<property name='R_legPoleVector_CTL_rotateY'/>
+			<property name='R_legPoleVector_CTL_rotateZ'/>
+			<property name='R_legPoleVector_CTL_scaleX'/>
+			<property name='R_legPoleVector_CTL_scaleY'/>
+			<property name='R_legPoleVector_CTL_scaleZ'/>
+			<property name='R_legPoleVector_CTL_translateX'/>
+			<property name='R_legPoleVector_CTL_translateY'/>
+			<property name='R_legPoleVector_CTL_translateZ'/>
+			<property name='R_legPoleVector_CTL_visibility'/>
+		</group>
+		<group name='L_foot_ik_CTL'>
+			<property name='L_foot_ik_CTL_rotateOrder'/>
+			<property name='L_foot_ik_CTL_rotateX'/>
+			<property name='L_foot_ik_CTL_rotateY'/>
+			<property name='L_foot_ik_CTL_rotateZ'/>
+			<property name='L_foot_ik_CTL_scaleX'/>
+			<property name='L_foot_ik_CTL_scaleY'/>
+			<property name='L_foot_ik_CTL_scaleZ'/>
+			<property name='L_foot_ik_CTL_translateX'/>
+			<property name='L_foot_ik_CTL_translateY'/>
+			<property name='L_foot_ik_CTL_translateZ'/>
+			<property name='L_foot_ik_CTL_visibility'/>
+		</group>
+		<group name='R_foot_ik_CTL'>
+			<property name='R_foot_ik_CTL_rotateOrder'/>
+			<property name='R_foot_ik_CTL_rotateX'/>
+			<property name='R_foot_ik_CTL_rotateY'/>
+			<property name='R_foot_ik_CTL_rotateZ'/>
+			<property name='R_foot_ik_CTL_scaleX'/>
+			<property name='R_foot_ik_CTL_scaleY'/>
+			<property name='R_foot_ik_CTL_scaleZ'/>
+			<property name='R_foot_ik_CTL_translateX'/>
+			<property name='R_foot_ik_CTL_translateY'/>
+			<property name='R_foot_ik_CTL_translateZ'/>
+			<property name='R_foot_ik_CTL_visibility'/>
+		</group>
+		<group name='L_hand_ik_CTL'>
+			<property name='L_hand_ik_CTL_rotateOrder'/>
+			<property name='L_hand_ik_CTL_rotateX'/>
+			<property name='L_hand_ik_CTL_rotateY'/>
+			<property name='L_hand_ik_CTL_rotateZ'/>
+			<property name='L_hand_ik_CTL_scaleX'/>
+			<property name='L_hand_ik_CTL_scaleY'/>
+			<property name='L_hand_ik_CTL_scaleZ'/>
+			<property name='L_hand_ik_CTL_translateX'/>
+			<property name='L_hand_ik_CTL_translateY'/>
+			<property name='L_hand_ik_CTL_translateZ'/>
+			<property name='L_hand_ik_CTL_visibility'/>
+		</group>
+		<group name='R_hand_ik_CTL'>
+			<property name='R_hand_ik_CTL_rotateOrder'/>
+			<property name='R_hand_ik_CTL_rotateX'/>
+			<property name='R_hand_ik_CTL_rotateY'/>
+			<property name='R_hand_ik_CTL_rotateZ'/>
+			<property name='R_hand_ik_CTL_scaleX'/>
+			<property name='R_hand_ik_CTL_scaleY'/>
+			<property name='R_hand_ik_CTL_scaleZ'/>
+			<property name='R_hand_ik_CTL_translateX'/>
+			<property name='R_hand_ik_CTL_translateY'/>
+			<property name='R_hand_ik_CTL_translateZ'/>
+			<property name='R_hand_ik_CTL_visibility'/>
+		</group>
+		<group name='L_armPoleVector_CTL'>
+			<property name='L_armPoleVector_CTL_rotateOrder'/>
+			<property name='L_armPoleVector_CTL_rotateX'/>
+			<property name='L_armPoleVector_CTL_rotateY'/>
+			<property name='L_armPoleVector_CTL_rotateZ'/>
+			<property name='L_armPoleVector_CTL_scaleX'/>
+			<property name='L_armPoleVector_CTL_scaleY'/>
+			<property name='L_armPoleVector_CTL_scaleZ'/>
+			<property name='L_armPoleVector_CTL_translateX'/>
+			<property name='L_armPoleVector_CTL_translateY'/>
+			<property name='L_armPoleVector_CTL_translateZ'/>
+			<property name='L_armPoleVector_CTL_visibility'/>
+		</group>
+		<group name='R_armPoleVector_CTL'>
+			<property name='R_armPoleVector_CTL_rotateOrder'/>
+			<property name='R_armPoleVector_CTL_rotateX'/>
+			<property name='R_armPoleVector_CTL_rotateY'/>
+			<property name='R_armPoleVector_CTL_rotateZ'/>
+			<property name='R_armPoleVector_CTL_scaleX'/>
+			<property name='R_armPoleVector_CTL_scaleY'/>
+			<property name='R_armPoleVector_CTL_scaleZ'/>
+			<property name='R_armPoleVector_CTL_translateX'/>
+			<property name='R_armPoleVector_CTL_translateY'/>
+			<property name='R_armPoleVector_CTL_translateZ'/>
+			<property name='R_armPoleVector_CTL_visibility'/>
+		</group>
+		<group name='main_CTL'>
+			<property name='main_CTL_rotateOrder'/>
+			<property name='main_CTL_rotateX'/>
+			<property name='main_CTL_rotateY'/>
+			<property name='main_CTL_rotateZ'/>
+			<property name='main_CTL_scaleX'/>
+			<property name='main_CTL_scaleY'/>
+			<property name='main_CTL_scaleZ'/>
+			<property name='main_CTL_translateX'/>
+			<property name='main_CTL_translateY'/>
+			<property name='main_CTL_translateZ'/>
+			<property name='main_CTL_visibility'/>
+		</group>
+	</view>
+</templates>
