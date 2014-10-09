@@ -12,7 +12,7 @@ import maya.mel as mel
 class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
     """Extract members of a napoleon.asset.rig as Alembic"""
 
-    families = ['napoleon.cache.pointcache']
+    families = ['napoleon.animation.pointcache']
     hosts = ['maya']
     version = (0, 0, 1)
     optional = True

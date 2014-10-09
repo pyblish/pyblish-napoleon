@@ -26,7 +26,7 @@ class ExtractNapoleonCurves(napoleon.plugin.Extractor):
 
     """
 
-    families = ['napoleon.cache.curves']
+    families = ['napoleon.animation.curves']
     hosts = ['maya']
     version = (0, 0, 1)
     optional = True

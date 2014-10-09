@@ -43,9 +43,7 @@ class ConformNapoleonAsset(napoleon.plugin.Conformer):
         for instance in context:
             commit_dir = instance.data('commit_dir')
             if not commit_dir:
-                raise pyblish.api.ConformError(
-                    "Cannot conform what hasn't "
-                    "been committed: \"%s\"" % instance)
+                continue
 
             self.log.info("Moving from %s to %s" % (commit_dir, conform_dir))
             self.copy(src=commit_dir, dst=conform_dir)

@@ -9,10 +9,10 @@ import cquery
 
 
 @pyblish.api.log
-class ConformNapoleonCache(napoleon.plugin.Conformer):
+class ConformNapoleonAnimation(napoleon.plugin.Conformer):
     """Move caches to their final destination
 
-    Caches end up underneath its corresponding shot,
+    Animations end up underneath its corresponding shot,
     e.g. shot/public/<instance>/<family>/v001/
 
     Data:
@@ -22,10 +22,10 @@ class ConformNapoleonCache(napoleon.plugin.Conformer):
 
     hosts = ['maya']
     version = (0, 1, 0)
-    families = ['napoleon.cache.curves',
-                'napoleon.cache.review',
-                'napoleon.cache.points']
-    name = 'Conform Cache'
+    families = ['napoleon.animation.curves',
+                'napoleon.animation.review',
+                'napoleon.animation.points']
+    name = 'Conform Animation'
 
     def process_instance(self, instance):
         commit_dir = instance.data('commit_dir')

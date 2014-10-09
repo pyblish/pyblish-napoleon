@@ -15,6 +15,7 @@ class ExtractNapoleonMb(napoleon.plugin.Extractor):
     version = (0, 1, 0)
     optional = False
     name = 'Extract Model as Maya Binary'
+    representation = 'maya'
 
     def process_instance(self, instance):
         """Returns list of value and exception"""
@@ -29,11 +30,15 @@ class ExtractNapoleonMb(napoleon.plugin.Extractor):
         name = pyblish.api.format_filename(name)
 
         with self.temp_dir() as temp_dir:
-            temp_file = os.path.join(temp_dir, name + ".mb")
+            temp_file = os.path.join(temp_dir,
+                                     # self.representation,
+                                     instance.data('family'),
+                                     name)
             cmds.file(temp_file,
                       type='mayaBinary',
                       exportSelected=True,
-                      preserveReferences=False)
+                      preserveReferences=False,
+                      defaultExtensions=True)
 
             self.commit(instance=instance)
 
