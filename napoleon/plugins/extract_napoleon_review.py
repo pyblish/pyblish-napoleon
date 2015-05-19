@@ -32,7 +32,7 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
                 "napoleon.cache.review"]
     hosts = ["maya"]
     version = (0, 1, 0)
-    requires = (1, 0, 9)
+    requires = "pyblish>=1.0.9"
 
     representation = 'review'
 
