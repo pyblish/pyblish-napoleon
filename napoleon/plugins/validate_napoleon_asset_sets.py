@@ -20,7 +20,7 @@ class ValidateNapoleonAssetSets(napoleon.plugin.Validator):
     hosts = ['maya']
     version = (0, 0, 1)
 
-    def process_instance(self, instance):
+    def process(self, instance):
         all_objsets = {
             'napoleon.asset.model': ['geometry_SEL'],
             'napoleon.asset.rig': ['pointcache_SEL',
@@ -34,7 +34,7 @@ class ValidateNapoleonAssetSets(napoleon.plugin.Validator):
             missing = list()
 
             for objset in objsets:
-                if not objset in instance:
+                if objset not in instance:
                     missing.append(objset)
 
             if missing:

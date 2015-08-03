@@ -36,7 +36,7 @@ class ExtractNapoleonReview(napoleon.plugin.Extractor):
 
     representation = 'review'
 
-    def process_instance(self, instance):
+    def process(self, instance):
         """Extract capture per camera"""
 
         self.log.info("Extracting capture..")

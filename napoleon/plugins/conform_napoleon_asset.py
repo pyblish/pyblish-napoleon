@@ -21,9 +21,9 @@ class ConformNapoleonAsset(napoleon.plugin.Conformer):
     families = ['napoleon.asset.rig',
                 'napoleon.asset.model',
                 'napoleon.asset.review']
-    name = 'Conform Asset'
+    label = 'Conform Asset'
 
-    def process_context(self, context):
+    def process(self, context):
         """Conform asset into a new version within a public repository"""
 
         current_file = context.data('current_file')

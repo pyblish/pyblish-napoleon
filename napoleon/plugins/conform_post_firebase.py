@@ -6,11 +6,11 @@ import pyblish.api
 
 @pyblish.api.log
 class PostConformerFirebase(pyblish.api.Conformer):
-    order = pyblish.api.Conformer.order + 0.5
+    order = pyblish.api.Conformer.order + 0.1
     families = ['*']
     hosts = ['maya']
 
-    def process_context(self, context):
+    def process(self, context):
         results = context.data("results")
         endpoint = "https://pyblish.firebaseio.com/af/successes.json"
         time = datetime.datetime.today().strftime("%a %b %d %H:%M:%S %Y")

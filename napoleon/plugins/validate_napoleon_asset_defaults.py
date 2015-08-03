@@ -12,11 +12,11 @@ class ValidateNapoleonDefaults(pyblish.api.Validator):
     families = ['napoleon.asset.rig']
     hosts = ['maya']
     version = (0, 1, 0)
-    name = "Validate Asset Defaults"
+    label = "Validate Asset Defaults"
 
     CONTROLS = "controls_SEL"
 
-    def process_instance(self, instance):
+    def process(self, instance):
         # An instance of family 'napoleon.asset.rig'
         # is guaranteed to have the 'controls_SEL' objectSet.
         if not cmds.objExists(self.CONTROLS):

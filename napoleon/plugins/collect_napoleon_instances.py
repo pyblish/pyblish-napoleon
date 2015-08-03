@@ -5,7 +5,7 @@ import maya.cmds as cmds
 
 
 @pyblish.api.log
-class SelectNapoleonInstances(napoleon.plugin.Selector):
+class CollectNapoleonInstances(napoleon.plugin.Collector):
     """Identify publishable instances via objectSets
 
     In a nutshell, this selector looks for instances with
@@ -16,9 +16,9 @@ class SelectNapoleonInstances(napoleon.plugin.Selector):
 
     hosts = ['maya']
     version = (0, 1, 0)
-    name = 'Select via Object Set'
+    label = 'Select via Object Set'
 
-    def process_context(self, context):
+    def process(self, context):
         for objset in cmds.ls("*.id",
                               objectsOnly=True,
                               type='objectSet',

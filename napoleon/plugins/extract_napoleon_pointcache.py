@@ -16,7 +16,17 @@ class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
     hosts = ['maya']
     version = (0, 0, 1)
     optional = True
-    name = 'Extract Animation as Pointcache'
+    label = 'Extract Animation as Pointcache'
+
+    def process(self, instance):
+        self.log.info("Extracting Alembic..")
+        self.load_plugins()
+
+        options = self.default_options
+        options = self.parse_overrides(instance, options)
+
+        self.log.info("Extracting {0} locally..".format(instance))
+        self.export(instance, options)
 
     @property
     def options(self):
@@ -63,16 +73,6 @@ class ExtractNapoleonPointcache(napoleon.plugin.Extractor):
         return {
             'frameRange': "%s %s" % (start_frame, end_frame)
         }
-
-    def process_instance(self, instance):
-        self.log.info("Extracting Alembic..")
-        self.load_plugins()
-
-        options = self.default_options
-        options = self.parse_overrides(instance, options)
-
-        self.log.info("Extracting {0} locally..".format(instance))
-        self.export(instance, options)
 
     def parse_overrides(self, instance, options):
         """Inspect data of instance to determine overridden options

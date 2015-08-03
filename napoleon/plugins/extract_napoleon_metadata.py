@@ -13,7 +13,7 @@ class ExtractNapoleonMetadata(napoleon.plugin.Extractor):
     hosts = ['maya']
     version = (0, 1, 0)
 
-    def process_instance(self, instance):
+    def process(self, instance):
         data = dict()
 
         for source, target in {'current_file': 'source',

@@ -14,10 +14,10 @@ class ExtractNapoleonMb(napoleon.plugin.Extractor):
     hosts = ['maya']
     version = (0, 1, 0)
     optional = False
-    name = 'Extract Model as Maya Binary'
+    label = 'Extract Model as Maya Binary'
     representation = 'maya'
 
-    def process_instance(self, instance):
+    def process(self, instance):
         """Returns list of value and exception"""
         self.log.info("Extracting mb..".format(instance))
         previous_selection = cmds.ls(selection=True)

@@ -20,21 +20,21 @@ class ConformNapoleonAnimation(napoleon.plugin.Conformer):
 
     """
 
-    hosts = ['maya']
+    hosts = ["maya"]
     version = (0, 1, 0)
-    families = ['napoleon.animation.curves',
-                'napoleon.animation.review',
-                'napoleon.animation.points']
-    name = 'Conform Animation'
+    families = ["napoleon.animation.curves",
+                "napoleon.animation.review",
+                "napoleon.animation.points"]
+    label = "Conform Animation"
 
-    def process_instance(self, instance):
-        commit_dir = instance.data('commit_dir')
+    def process(self, instance):
+        commit_dir = instance.data("commit_dir")
         if not commit_dir:
             raise pyblish.api.ConformError(
                 "Cannot conform what hasn't "
                 "been committed: \"%s\"" % instance)
 
-        conform_dir = instance.data('conform_dir')
+        conform_dir = instance.data("conform_dir")
 
         if not conform_dir:
             conform_dir = self.compute_conform_dir(root=commit_dir,
@@ -43,16 +43,16 @@ class ConformNapoleonAnimation(napoleon.plugin.Conformer):
         self.log.info("Moving from %s to %s" % (commit_dir, conform_dir))
         self.copy(src=commit_dir, dst=conform_dir)
 
-        instance.set_data('conform_dir', conform_dir)
+        instance.set_data("conform_dir", conform_dir)
 
     def compute_conform_dir(self, root, instance):
         # Look in other instances first
         for instance in instance.context:
-            if instance.has_data('conform_dir'):
-                return instance.data('conform_dir')
+            if instance.has_data("conform_dir"):
+                return instance.data("conform_dir")
 
         parent_asset_dir = cquery.first_match(root,
-                                              selector='.Shot',
+                                              selector=".Shot",
                                               direction=cquery.UP)
         if not parent_asset_dir:
             raise pyblish.api.ConformError(
@@ -62,7 +62,7 @@ class ConformNapoleonAnimation(napoleon.plugin.Conformer):
         self.log.info("Parent shot: %s" % parent_asset_dir)
         public_dir = napoleon.pipeline.public_dir(parent_asset_dir)
 
-        name = instance.data('name')
+        name = instance.data("name")
 
         try:
             # Use namespace as name of instance by default
@@ -71,7 +71,7 @@ class ConformNapoleonAnimation(napoleon.plugin.Conformer):
         except ValueError:
             pass
 
-        family = instance.data('family')
+        family = instance.data("family")
         assert family
 
         instance_dir = os.path.join(public_dir, name, family)

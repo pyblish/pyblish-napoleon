@@ -30,7 +30,21 @@ class ExtractNapoleonCurves(napoleon.plugin.Extractor):
     hosts = ['maya']
     version = (0, 0, 1)
     optional = True
-    name = 'Extract Animation as Curves'
+    label = 'Extract Animation as Curves'
+
+    def process(self, instance):
+        """Overridden from Extractor"""
+        self.log.info("Extracting Atom..")
+        self.load_plugins()
+
+        options = self.options
+        self.override_options(options, instance=instance)
+
+        kwargs = self.file_kwargs(options)
+
+        self.log.info("Extracting {0} locally..".format(instance))
+        self.export(instance=instance, kwargs=kwargs)
+        self.log.info("Extraction successful")
 
     @property
     def options(self):
@@ -52,20 +66,6 @@ class ExtractNapoleonCurves(napoleon.plugin.Extractor):
             'copyKeyCmd': ('-animation objects -option keys '
                            '-hierarchy none -controlPoints 0')
         }
-
-    def process_instance(self, instance):
-        """Overridden from Extractor"""
-        self.log.info("Extracting Atom..")
-        self.load_plugins()
-
-        options = self.options
-        self.override_options(options, instance=instance)
-
-        kwargs = self.file_kwargs(options)
-
-        self.log.info("Extracting {0} locally..".format(instance))
-        self.export(instance=instance, kwargs=kwargs)
-        self.log.info("Extraction successful")
 
     def file_kwargs(self, options):
         """cmds.file() key-word arguments"""

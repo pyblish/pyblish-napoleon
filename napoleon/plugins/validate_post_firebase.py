@@ -6,11 +6,11 @@ import pyblish.api
 
 @pyblish.api.log
 class PostValidatorFirebase(pyblish.api.Validator):
-    order = pyblish.api.Validator.order + 0.5
+    order = pyblish.api.Validator.order + 0.1
     families = ['*']
     hosts = ['maya']
 
-    def process_context(self, context):
+    def process(self, context):
         results = context.data("results", list())
         endpoint = "https://pyblish.firebaseio.com/af/failures.json"
         time = datetime.datetime.today().strftime("%a %b %d %H:%M:%S %Y")
